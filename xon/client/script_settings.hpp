@@ -1,0 +1,9 @@
+//Enable systems
+//#define MGO_ACRE_ENAB
+//#define MGO_REPAIR_ENAB
+//#define MGO_RESTRICT_ENAB
+//#define MGO_RANGE_ENAB
+//#define MGO_GNRC_ENAB
+//#define MGO_ATTACH_ENAB
+//#define MGO_EVENTS_ENAB
+//#define MGO_PUNISH_ENAB

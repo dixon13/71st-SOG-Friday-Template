@@ -1,0 +1,209 @@
+
+class header {
+	gametype = COOP;
+	minplayers = 1;
+	maxplayers = 34;
+	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
+};
+
+class Params {
+
+	class EmtpyLine1 {
+	//paramsArray[0]
+		title = ":: Mission Settings";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;
+	};
+
+    class MissionCount {
+	//paramsArray[1]
+		title = "Number of missions";
+		values[] = {0,1,2,3,4,6,7,8};
+		texts[] = {"Zero","One","Two","Three","Four","Six","Seven","Eight"};
+		default = 6;
+	};
+	class BluforTickets {
+	//paramsArray[2]
+		title = "Number of tickets Blufor starts with";
+		values[] = {10,20,30,40,50,60,70,80,90,1001};
+		texts[] = {"10","20","30","40","50","60","70","80","90","Unlimited"};
+		default = 1001;
+	};
+	class TeleportSquad {
+	//paramsArray[3]
+		title = "Option to teleport to squad at flag pole at base";
+		values[] = {0,1};
+		texts[] = {"No","Yes"};
+		default = 1;
+	};
+	class headlessClients {
+	//paramsArray[4]
+		title = "Do you have headless clients and if so how many?";
+		values[] = {0,1,2,3};
+		texts[] = {"Zero","One","Two","Three"};
+		default = 3;
+	};
+	class EmptyLine2 {
+	//ParamsArray[5]
+		title = ":: Client Settings";
+		values[] = {0,0};
+		texts[] = {"",""};
+		default = 0;
+	};
+	class CrewHud {
+	//paramsArray[6]
+		title = "Vehicle Crew Hud";
+		values[] = {0,1};
+		texts[] = {"Off","On"};
+		default =1;
+	};
+	class viewDistance {
+	//paramsArray[7]
+		title = "View Distance Script";
+		values[] = {0,1};
+		texts[] = {"Off","On"};
+		default =1;
+	};
+};
+
+
+
+author = "dixon13 aka D.Begay 71stSOG";
+onLoadMission = "71st SOG ACE3 Template";
+onLoadIntroTime = true;
+onLoadMissionTime = true;
+onLoadName = "71st SOG ACE3 Template";
+loadScreen = "xon\Images\71STOGLOADING2.jpg";
+overviewTextLocked = "Friday night ops mission for the 71st Special Operations Group";
+overviewPicture = "xon\Images\71STOGLOADING2.jpg";
+
+briefing = 1;
+debriefing = 1;
+respawn = 3;
+respawnDelay = 50;
+RespawnDialog = 1;
+disabledAI = 1;
+enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
+disableChannels[] = {0,1,2,6};   //Disables channels: 0 Global, 1 Side, 2 Command and 6 System Chat
+enableItemsDropping = 0;         //Disable dropping items while swimming
+respawnTemplatesEast[] = {"BASE","Counter"};
+respawnTemplatesWest[] = {"BASE","Counter"};
+
+//------------------------- Garbage collector
+							
+wreckLimit = 20;										// Limit before removal is triggered
+wreckRemovalMinTime = 300;								// Min time before removal
+wreckRemovalMaxTime = 900;								// Max time before removal
+corpseLimit = 40;										// Limit before removal is triggered		
+corpseRemovalMinTime = 300;								// Min time before removal
+corpseRemovalMaxTime = 900;								// Max time before removal
+
+//------------------------- MISC
+
+//------ R3F Logistics Inclusion
+#include "R3F_LOG\desc_include.h"
+
+class RscTitles {
+	#include "common.hpp"
+	#include "xon\crewhud\namesleft.hpp"	// Occupants HUD for vehicles
+};
+
+#include "CHVD\dialog.hpp"								//View Distance Settings Dialog
+
+//------------------------ FUNCTIONS
+class CfgFunctions {
+	#include "CHVD\CfgFunctions.hpp"				//View Distance
+};
+
+//Adding sound for AAN news
+class CfgSounds {
+	class news {
+		name="news";
+		sound[] = {"xon\sounds\news.ogg", db+3, 1.0};
+		titles[]={};
+	};
+	class insScream {
+		name = "insurgent_scream";
+		sound[] = {"xon\sounds\scream.ogg", 1, 1};
+		titles[] = {};
+	};
+};
+
+
+// Initializations event handlers for spawning intel on OPFOR death
+class Extended_Init_EventHandlers {
+     class CAManBase
+     {
+		//init = " _this spawn (compileFinal preprocessFileLineNumbers 'xon\main\spawn_intel.sqf')";
+     };
+};
+
+class CfgNotifications {
+	class HvtTask {
+		title = "Capture HVT";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskAssigned";
+		priority = 5;
+	};
+	class HvtDead {
+		color[] = {1,0.3,0.2,1};
+		duration = 10;
+		title = "The HVT is dead";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIconFailed_ca.paa";
+		description = "%1";
+		sound = "taskFailed";
+		priority = 5;
+	};
+	class HvtWin {
+		title = "HVT Secured";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa";
+		description = "%1";
+		sound = "taskSucceeded";
+		priority = 5;
+	};
+	class CacheTask {
+		title = "Destroy Cache";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskAssigned";
+		priority = 5;
+	};
+	class CacheWin {
+		title = "Cache Destroyed";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskSucceeded";
+		priority = 5;
+	};
+	class recCenterTask {
+		title = "Clear out the Recruitment Center";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskAssigned";
+		priority = 5;
+	};
+	class recCenterWin {
+		title = "Recruitment Center Destroyed";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskSucceeded";
+		priority = 5;
+	};
+	class secureCrashTask {
+		title = "Secure the Crash Site";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskAssigned";
+		priority = 5;
+	};
+	class secureCrashWin {
+		title = "Crash Site Secured";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		sound = "taskSucceeded";
+		priority = 5;
+	};
+};
