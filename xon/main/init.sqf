@@ -7,17 +7,19 @@
 
 waitUntil{!(isNil "BIS_fnc_init")};
 //#define DEBUG_MODE_FULL
+/*
 if (missionNamespace getVariable ["XON_MISSIONS",nil] == nil) then {
 	missionNamespace setVariable ["XON_MISSIONS",0,true];
 	XON_MISSIONS = 0;
 };
+*/
 #include "script_component.hpp"
 //#include "script_events.hpp"
 #include "script_functions.hpp"
 
 diag_log [diag_frameno, diag_ticktime, time, "Executing MAIN init.sqf"];
 
-QUOTE(TargetAO) setMarkerAlpha 0;
+//QUOTE(TargetAO) setMarkerAlpha 0;
 
 //------Required for Headless Client
 if (!hasInterface && !isDedicated) then {
@@ -26,11 +28,11 @@ if (!hasInterface && !isDedicated) then {
 	publicVariable "headlessClients";
 	isHC = true;
 };
-
+/*
 _posReturnPointTrigger = position return_point_trigger;
 return_arrow = "Sign_Arrow_F" createVehicle _posReturnPointTrigger;
 publicVariable "return_arrow";
-
+*/
 LOADCP(zbe_cache);
 LOADCP(headlessClient);
 LOADCP(client);
