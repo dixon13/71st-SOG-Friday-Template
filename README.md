@@ -16,6 +16,9 @@ To use insert all of these files into your mission and make modifications if you
 #####AI Caching
   This framework has a module that caches AI for you. All credit goes to ZBE_Cache. The script was built into the framework.
   
+#####Headless Clients
+There is a module for headless clients that works but is not perfect. If you are running headless clients then run no more than 3. If you aren't, then edit the file "xon\main\init.sqf" so that it doesn't load up the headless clients module.
+  
 #####Debug/Admin Options
   There are options to teleport when you are the server admin to help server admins out when that tool is needed. Future tools    are in the works, such as a ghost mode tool. These tools will show up in your ACE Self-Interaction menu.
 
