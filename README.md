@@ -17,7 +17,7 @@ To use insert all of these files into your mission and make modifications if you
   This framework has a module that caches AI for you. All credit goes to ZBE_Cache. The script was built into the framework.
   
 #####Debug/Admin Options
-  There are options to teleport when you are the server admin to help server admins out when that tool is needed. Future tools    are in the works, such as a ghost mode tool.
+  There are options to teleport when you are the server admin to help server admins out when that tool is needed. Future tools    are in the works, such as a ghost mode tool. These tools will show up in your ACE Self-Interaction menu.
 
 #####Automation of Players Added to Zeus
   Players are automatically added to Zeus in initPlayerLocal.sqf to not necessarily edit players, but to keep them marked so   Zeus can identify players and keep track of them when using the Zeus interface.
