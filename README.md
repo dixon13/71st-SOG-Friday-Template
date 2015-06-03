@@ -17,4 +17,4 @@
   There are options to teleport when you are the server admin to help server admins out when that tool is needed. Future tools    are in the works, such as a ghost mode tool.
 
 #####Automation of Players Added to Zeus
-  Players are automatically added to Zeus in initPlayerLocal.sqf to not necessarily edit players, but to keep them marked and so   Zeus can identify players and keep track of them when using the Zeus interface.
+  Players are automatically added to Zeus in initPlayerLocal.sqf to not necessarily edit players, but to keep them marked so   Zeus can identify players and keep track of them when using the Zeus interface.
