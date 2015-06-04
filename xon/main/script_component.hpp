@@ -11,8 +11,8 @@
 
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-//#include "script_settings.hpp"
 #include "script_functions.hpp"
+#include "script_events.hpp"
 
 #define FMAN(var1) TRIPLES(XON_MAIN,fnc,var1)
 

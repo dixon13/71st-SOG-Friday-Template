@@ -1,9 +1,10 @@
 if (hasInterface || local player) then {
+
+	enableSaving [FALSE,FALSE];
+	["Preload"] call BIS_fnc_Arsenal;
 	
 	//#define DEBUG_MODE_FULL
 	#include "script_component.hpp"
-
-	//#include "script_events.hpp"
 
 	diag_log [diag_frameno, diag_ticktime, time, "Executing CLIENT init.sqf"];
 	/*
@@ -19,7 +20,6 @@ if (hasInterface || local player) then {
 		[false] spawn {[_this select 0] CALLC(PREFIX\COMPONENT\adminTeleport);};
 		//[false] spawn {[_this select 0] CALLC(PREFIX\COMPONENT\ghostMode.sqf);};  <-- WIP
 	#endif
-	//CALLC(PREFIX\COMPONENT\scoreKeeper.sqf);
 	
 	if ((paramsArray select 6) == 1) then {
 		LOADCP(crewhud);
