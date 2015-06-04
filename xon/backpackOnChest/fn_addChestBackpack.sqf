@@ -17,7 +17,7 @@
  * Public: No
  */
 #include "script_component.hpp"
-PARMAS_1(_caller,_pack,_cargo,_force);
+PARAMS_4(_caller,_pack,_cargo,_force);
 _added = false;
 
 if (isNil "_force") then {

@@ -7,5 +7,6 @@ class ZADE_BOC {
 		class BackpackOnBack {};
 		class addChestBackpack {};
 		class removeChestBackpack {};
+		class init{};
 	};
 };

@@ -1,8 +1,20 @@
 if !(local player) exitWith{};
 
-if (hasInterface || local player) then {
-	//#define DEBUG_MODE_FULL
-	#include "script_component.hpp"
+diag_log [diag_frameno, diag_ticktime, time, "Executing backpackOnChest init.sqf"];
 
-	[ACE_Player] call ZADE_BOC_fnc_init;
+if (hasInterface || local player) then {
+	#define DEBUG_MODE_FULL
+	#include "script_component.hpp"
+	
+	#ifdef DEBUG_MODE_FULL
+		player sideChat "backpackOnChest - init executing...";
+	#endif
+
+	call ZADE_BOC_fnc_init;
+	
+	#ifdef DEBUG_MODE_FULL
+		player sideChat "backpackOnChest - init done...";
+	#endif
 };
+
+diag_log [diag_frameno, diag_ticktime, time, "backpackOnChest init.sqf processed"];
