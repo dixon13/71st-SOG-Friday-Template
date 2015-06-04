@@ -115,6 +115,7 @@ class RscTitles {
 //------------------------ FUNCTIONS
 class CfgFunctions {
 	#include "CHVD\CfgFunctions.hpp"				//View Distance
+	#include "xon\backpackOnChest\functions.hpp"	//Backpack On Chest
 };
 
 //Adding sound for AAN news

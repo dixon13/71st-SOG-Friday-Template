@@ -29,6 +29,7 @@ LOADCP(client);
 if ((paramsArray select 3) == 1) then {
 	LOADCP(squad_teleport);
 };
+LOADCP(backpackOnChest);
 
 //  Call to R3F Logistics
 execVM "R3F_LOG\init.sqf";
