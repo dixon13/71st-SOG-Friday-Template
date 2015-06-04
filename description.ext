@@ -18,17 +18,17 @@ class Params {
 
     class MissionCount {
 	//paramsArray[1]
-		title = "Number of missions";
-		values[] = {0,1,2,3,4,6,7,8};
-		texts[] = {"Zero","One","Two","Three","Four","Six","Seven","Eight"};
-		default = 6;
+		title = "Placeholder";
+		values[] = {0,1};
+		texts[] = {"Zero","One"};
+		default = 1;
 	};
 	class BluforTickets {
 	//paramsArray[2]
-		title = "Number of tickets Blufor starts with";
-		values[] = {10,20,30,40,50,60,70,80,90,1001};
-		texts[] = {"10","20","30","40","50","60","70","80","90","Unlimited"};
-		default = 1001;
+		title = "Placeholder";
+		values[] = {0,1};
+		texts[] = {"0","1"};
+		default = 1;
 	};
 	class TeleportSquad {
 	//paramsArray[3]
@@ -39,7 +39,7 @@ class Params {
 	};
 	class headlessClients {
 	//paramsArray[4]
-		title = "Do you have headless clients and if so how many?";
+		title = "Do you have headless clients and if so how many? - PLACEHOLDER NOT FUNCTIONAL";
 		values[] = {0,1,2,3};
 		texts[] = {"Zero","One","Two","Three"};
 		default = 3;
@@ -56,14 +56,14 @@ class Params {
 		title = "Vehicle Crew Hud";
 		values[] = {0,1};
 		texts[] = {"Off","On"};
-		default =1;
+		default = 1;
 	};
 	class viewDistance {
 	//paramsArray[7]
 		title = "View Distance Script";
 		values[] = {0,1};
 		texts[] = {"Off","On"};
-		default =1;
+		default = 1;
 	};
 };
 
