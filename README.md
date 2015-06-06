@@ -5,6 +5,9 @@ REQUIREMENTS: CBA & ACE3
 ##Use
 To use insert all of these files into your mission and make modifications if you wish. Please do not re-release this framework. Once all of the files are in your mission you are finished and the mission can be played. If you do not know what you are doing when editing, DO NOT EDIT because there is a chance you could break the framework. Enjoy!
 
+######Teleport on Flag
+To use this feature place down a flag and name it "teleportFlag". Then the framework can use this object to add an action with the ACE menu to the flag pole so clients can use it to teleport to squad mates.
+
 ##Features
   This mission framework is built with ACE3 and CBA, so to use this framework the most recent versions of ACE3 and CBA are    required to run when playing with this framework. Keep in mind this framework is all still WIP.
 
