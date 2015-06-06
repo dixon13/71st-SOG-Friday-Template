@@ -24,7 +24,7 @@ There is a module for headless clients that works but is not perfect. If you are
   There are options to teleport when you are the server admin to help server admins out when that tool is needed. Future tools    are in the works, such as a ghost mode tool. These tools will show up in your ACE Self-Interaction menu.
 
 #####Automation of Players Added to Zeus
-  Players are automatically added to Zeus in initPlayerLocal.sqf to not necessarily edit players, but to keep them marked so   Zeus can identify players and keep track of them when using the Zeus interface.
+  Players are automatically added to Zeus, to not necessarily edit players, but to keep them marked so Zeus can identify players and keep track of them when using the Zeus interface.
 
 #####Backpack on Chest
 Added the Backpack On Chest mod for Arma 3 into the framework so there is no need to download the mod. All credit is due to DerZade, the original author of the mod.
